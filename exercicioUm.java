@@ -1,7 +1,7 @@
 //fup que questione a quantidade de nota a ser informada, receba as notas e calcule a média.
 
 import java.util.Scanner;
-
+//
 public class exercicioUm {
     public static void main(String[] args){
         System.out.println("Informa a quantidade de notas");
