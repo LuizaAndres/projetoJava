@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 //Fup que possua uma collection que contenha as 52 cartas do baralho e imprima elas.
-
 public class listaQuatroExCinco {
     public static void main(String[] args){
         ArrayList<String> numero = new ArrayList<>();
-        numero.add("A")
-        numero.add("1");
+        numero.add("A");
         numero.add("2");
         numero.add("3");
         numero.add("4");
@@ -23,7 +21,15 @@ public class listaQuatroExCinco {
         nipe.add("Espadas");
         nipe.add("Paus");
         nipe.add("Ouros");
-
-        
+        int aux=0;
+        for(int i=0; i<=12; i++){
+            if(i==12){
+                if(aux<3){
+                    aux++;
+                    i=0;
+                }
+            }
+            System.out.println(numero.get(i)+" "+nipe.get(aux));
+        }        
     }
 }
