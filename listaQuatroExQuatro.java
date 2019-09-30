@@ -9,10 +9,17 @@ public class listaQuatroExQuatro {
                 
         int valor[] = new int[tamanho];
 
-        System.out.println("Digite os valores para o array: \n");
+        
 
         for(int i=0; i< tamanho; i++){
+            System.out.println("Digite o " + (i+1) + "° valor para o array: \n");
             valor[i] = scanner.nextInt();
+            if (valor[i]%2==0){
+                System.out.println(valor[i] + " esse numero é par");
+            }
+            else{
+                System.out.println(valor[i] + " esse numero é impar");
+            }
         }
         scanner.close();
 //ver se é par ou impar

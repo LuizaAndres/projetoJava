@@ -38,7 +38,7 @@ public class listaQuatroExSete {
                 
                 
                 default:
-                System.out.println("Não é função válida!");
+                System.out.println("Não é função1 válida!");
                 
             }
             
