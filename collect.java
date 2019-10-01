@@ -1,20 +1,21 @@
-import java.util.ArrayDeque;
 import java.util.Scanner;
-public class listaQuatroExNove {
-    public static void main(String[] args){
+
+public class collect {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> numero = new ArrayList<>();
-        int pilha,qtde;
-        try{
+        int pilha;
+        int qtde;
+        try {
             System.out.println("Quatnas inf. quer colocar");
             qtde = scanner.nextInt();
-            for(int i =0; i<qtde; i++){
+            for (int i = 0; i < qtde; i++) {
                 pilha = scanner.nextInt();
-                stack.add(pilha); 
-            }   
-        }catch(Exception e){
-            System.out.println("Erro deu aqui: "+e);
+                System.out.println(pilha);
+            }
+        } catch (Exception e) {
+            System.out.println("Erro deu aqui: " + e);
         }
-        
+        scanner.close();
+
     }
 }
