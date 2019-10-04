@@ -14,11 +14,6 @@ public class exercicioUm {
             System.out.println("informe o "+ (i + 1) +" número");
             notas[i] = scanner.nextDouble();
         }
-
-        
-        
         scanner.close();
-
-
     }
 }

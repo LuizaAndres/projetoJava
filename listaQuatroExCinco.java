@@ -22,8 +22,8 @@ public class listaQuatroExCinco {
         nipe.add("Paus");
         nipe.add("Ouros");
         int aux=0;
-        for(int i=0; i<=12; i++){
-            if(i==12){
+        for(int i=0; i<=13; i++){
+            if(i==13){
                 if(aux<3){
                     aux++;
                     i=0;

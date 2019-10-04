@@ -6,11 +6,7 @@ public class listaQuatroExQuatro {
 //ler vetor
         final int tamanho = 10;
         Scanner scanner = new Scanner(System.in);
-                
         int valor[] = new int[tamanho];
-
-        
-
         for(int i=0; i< tamanho; i++){
             System.out.println("Digite o " + (i+1) + "° valor para o array: \n");
             valor[i] = scanner.nextInt();
