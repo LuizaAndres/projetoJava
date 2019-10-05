@@ -1,14 +1,3 @@
-//O programa deverá receber uma lista de valores de um arquivo de texto,
-// onde esta lista não terá uma determinação de quantidade fixa, podendo variar de arquivo para arquivo.
-// Após, deverá ser alocado os valores dentro da estrutura de Array (não poderão ser aplicadas Collections para solução),
-// e realizada a ordenção dos valores,
-// imprimindo em tela os passos ocorridos desta ordenação.
-// Após, deverá ser utilizado uma Collection para o recebimento dos mesmos valores, de maneira que estes valores já estejam ordenados.
-// Ao final, deverá ser impresso em tela o valor ordenado do Array e da Collection, garantindo que estejam iguais,
-// e deverá ser exportado em um arquivo de texto esses valores.
-
-//FUP leia 20 valores, calcule a media aritimetica desses valores e imprime os valores que são menores que a media.
-
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,8 +9,7 @@ import java.util.Arrays;
 public class avaliacao {
     public static void main(String[] args){
         System.out.println("Luiza Andres");
-        //O programa deverá receber uma lista de valores de um arquivo de texto
-        // onde esta lista não terá uma determinação de quantidade fixa, podendo variar de arquivo para arquivo.
+        //recebe lista de valores de um arquivo de texto
         int i;
         try{
             BufferedReader ler = new BufferedReader(new FileReader("lista.txt"));
@@ -53,11 +41,9 @@ public class avaliacao {
             }
             // Após, deverá ser utilizado uma Collection para o recebimento dos mesmos valores, de maneira que estes valores já estejam ordenados.
             ArrayList<Integer> list = new ArrayList<>();
-            for(int value:list){
+            for(i = 0; i<valor.length; i++){
                 list.add(valor[i]);
             }
-            
-            
             // Ao final, deverá ser impresso em tela o valor ordenado do Array e da Collection, garantindo que estejam iguais,
             System.out.println("Meu array organizado");
             for (i=0; i<valor.length; i++){
@@ -65,7 +51,6 @@ public class avaliacao {
                 escrita.append(" "+valor[i]);
             }
             // e deverá ser exportado em um arquivo de texto esses valores.
-            
             escrita.close();
         }catch (IOException exception){
             System.out.println("Erro de exceção I/O: " + exception.getMessage());
