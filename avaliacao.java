@@ -62,6 +62,7 @@ public class avaliacao {
             System.out.println("Meu array organizado");
             for (i=0; i<valor.length; i++){
                 System.out.println(valor[i]);
+                escrita.append(" "+valor[i]);
             }
             // e deverá ser exportado em um arquivo de texto esses valores.
             
