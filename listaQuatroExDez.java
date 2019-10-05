@@ -2,5 +2,6 @@
 
 public class listaQuatroExDez {
     public static void main(String[] args){
+        
     }
 }
