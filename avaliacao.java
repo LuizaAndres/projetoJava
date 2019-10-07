@@ -25,19 +25,20 @@ public class avaliacao {
             //ordenando a bagaça
             int aux = 0;
             for(i = 0; i<valor.length; i++){
+                //seleciona o primeiro numero inserido
                 for(int j = 0; j<(valor.length-1); j++){
                     if(valor[j] > valor[j + 1]){
+                        //verifica se o primeiro numero é maior que o segundo
                         aux = valor[j];
+                        //salva o maior (primeiro) na aux
                         valor[j] = valor[j+1];
+                        // o primeiro recebe o valor do segundo
                         valor[j+1] = aux;
+                        //o segundo recebe o valor do primeiro
                     }
             // imprimindo em tela os passos ocorridos desta ordenação.  
                 }
                 System.out.println(Arrays.toString(valor));
-            }
-            System.out.println("Vetor organizado:");
-            for(i = 0; i<5; i++){
-                System.out.println(" "+valor[i]);
             }
             // Após, deverá ser utilizado uma Collection para o recebimento dos mesmos valores, de maneira que estes valores já estejam ordenados.
             ArrayList<Integer> list = new ArrayList<>();
@@ -45,12 +46,14 @@ public class avaliacao {
                 list.add(valor[i]);
             }
             // Ao final, deverá ser impresso em tela o valor ordenado do Array e da Collection, garantindo que estejam iguais,
+            System.out.println("Vetor organizado:");
+            System.out.println(Arrays.toString(valor));
             System.out.println("Meu array organizado");
             for (i=0; i<valor.length; i++){
-                System.out.println(valor[i]);
-                escrita.append(" "+valor[i]);
+                System.out.print(valor[i] + "; ");
+                // e deverá ser exportado em um arquivo de texto esses valores.
+                escrita.append(", "+valor[i]);
             }
-            // e deverá ser exportado em um arquivo de texto esses valores.
             escrita.close();
         }catch (IOException exception){
             System.out.println("Erro de exceção I/O: " + exception.getMessage());
