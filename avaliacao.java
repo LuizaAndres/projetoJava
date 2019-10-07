@@ -13,8 +13,9 @@ public class avaliacao {
         int i;
         try{
             BufferedReader ler = new BufferedReader(new FileReader("lista.txt"));
+            //definindo arquivo de saida
             BufferedWriter escrita = new BufferedWriter(new FileWriter("listasaida.txt"));
-            // Após, deverá ser alocado os valores dentro da estrutura de Array (não poderão ser aplicadas Collections para solução),
+            //alocando os valores no Array
             String[] array = ler.readLine().split(",");
             int[] valor = new int[array.length];
             //Convertendo string em int e salvando dentro do novo array
@@ -22,10 +23,11 @@ public class avaliacao {
                 valor[i] = Integer.parseInt(array[i]);
             }
             ler.close();
-            //ordenando a bagaça
+            //ordenando o array
             int aux = 0;
+            System.out.println("Organizando o Array");
             for(i = 0; i<valor.length; i++){
-                //seleciona o primeiro numero inserido
+                //seleciona o primeiro numero do arquivo
                 for(int j = 0; j<(valor.length-1); j++){
                     if(valor[j] > valor[j + 1]){
                         //verifica se o primeiro numero é maior que o segundo
@@ -40,18 +42,19 @@ public class avaliacao {
                 }
                 System.out.println(Arrays.toString(valor));
             }
-            // Após, deverá ser utilizado uma Collection para o recebimento dos mesmos valores, de maneira que estes valores já estejam ordenados.
+            // Colocando valores ordenados na Collection
             ArrayList<Integer> list = new ArrayList<>();
             for(i = 0; i<valor.length; i++){
                 list.add(valor[i]);
             }
-            // Ao final, deverá ser impresso em tela o valor ordenado do Array e da Collection, garantindo que estejam iguais,
+            // imprimindo valor ordenado do Array
             System.out.println("Vetor organizado:");
             System.out.println(Arrays.toString(valor));
-            System.out.println("Meu array organizado");
+            // imprimindo valor da Collection garantindo que estejam iguais,
+            System.out.println("Collection organizada");
             for (i=0; i<valor.length; i++){
-                System.out.print(valor[i] + "; ");
-                // e deverá ser exportado em um arquivo de texto esses valores.
+                System.out.print(valor[i] + ", ");
+                // gravando em txt
                 escrita.append(", "+valor[i]);
             }
             escrita.close();
