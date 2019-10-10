@@ -1,0 +1,1 @@
+//crie uma classe que represente uma conta corrente, devendo ter as propriedades: numero da conta, agencia, saldo, nome do titular e os metodos deposito, saque e saldo total.
