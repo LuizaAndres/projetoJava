@@ -9,6 +9,7 @@
 public class exCincoDois{
     public static void main (String[] args){
         Pessoa pessoa = new Pessoa();
+        pessoa.nome = "Maria";
         pessoa.altura = 1.6;
         pessoa.peso = 70;
         double imc = pessoa.imc();
