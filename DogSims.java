@@ -12,15 +12,15 @@ public class DogSims{
         dog1.idade = 0;
         dog1.energia= 8;
         dog1.fome = 2;
-        dog1.sede = 2;
-        dog1.stSede ="carai";
+        dog1.sede = 4;
+        dog1.stSede = "Au! Não estou com sede.";
         novo.close();
-        
-        System.out.println("o que vc quer fazer?");
+//criar menu        
+        System.out.println("O que vc quer fazer?");
 
         dog1.xixizar();
         System.out.println(dog1.stSede);
-       
+        
         dog1.cagar();
         System.out.println(dog1.stFome);
     }
