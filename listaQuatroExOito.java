@@ -22,7 +22,5 @@ public class listaQuatroExOito {
         scanner.close();
         //imprime media final depois do for
         System.out.println("A média final é: "+ media);
-        
-
     }
 }

@@ -3,7 +3,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-
 public class listaQuatroExSete {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +17,6 @@ public class listaQuatroExSete {
             switch (op) {
                 case 1:
                 System.out.println("Normal");
-                
                 normal.add("N"+auxn);
                 auxn++;
                 break;
@@ -35,13 +33,9 @@ public class listaQuatroExSete {
                     System.out.println(normal.poll());
                 }
                 break;
-                
-                
                 default:
                 System.out.println("Não é função1 válida!");
-                
             }
-            
         } while (op!=9);   
         scanner.close();
     }
