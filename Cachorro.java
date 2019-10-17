@@ -28,20 +28,25 @@ public class Cachorro {
     }
     int brincar(){
         this.energia--;
-        return true
+        this.fome++;
+        this.sede--;
+        print stFome;
+        printstEnergia;
+        print stSede;
+        
     }*/
     void cagar(){
         if (this.fome<10){
             this.fome++;
         }
         if (this.fome<5){
-            this.stFome="não estou com fome.";
+            this.stFome="Au! Não estou com fome.";
         }
         else if (this.fome<9){
-            this.stFome="estou com fome.";
+            this.stFome="Au Au! Estou com fome.";
         }
         else if(this.fome==10){
-            this.stFome="Estou morrendo de fome.";
+            this.stFome="Grrrrr!! Estou morrendo de fome.";
         }
     }
     void xixizar(){
@@ -49,13 +54,13 @@ public class Cachorro {
             this.sede++;
         }
         if (this.sede<5){
-            this.stSede="não estou com sede.";
+            this.stSede="Au! Não estou com sede.";
         }
         else if (this.sede<9){
-            this.stSede="estou com sede.";
+            this.stSede="Au! Au! Estou com sede.";
         }
         else if(this.sede==10){
-            this.stSede="Estou morrendo de sede.";
+            this.stSede="Grrrr!! Estou morrendo de sede.";
         }
     }
 }
