@@ -10,7 +10,8 @@ public class Cachorro {
     String stSede;
     String stFome;
     boolean bola;
-    Dono dono;
+    
+    Dono dog1 = new Dono();
     Cachorro() {
         this.peso = 2000;
         this.comprimento = 15;
@@ -46,7 +47,7 @@ public class Cachorro {
             this.energia--;
             this.fome++;
             this.sede++;
-            dono.fetch();      
+            dog1.fetch();      
         }
     }
 
