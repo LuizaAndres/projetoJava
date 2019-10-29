@@ -1,40 +1,39 @@
-import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 public class Locacao{
-    int id_Loc;
-    Cliente id_Cliente;
-    Cliente nome_Cliente;
-    String dt_Loc;
-    String dt_Dev;
-    Float valor_Tot;
+    int idLoc;
+    Cliente cliente;
+    Date dtLoc;
+    String dtDev;
+    double valorTot;
     //criando lista de filmes do carrinho
     List<Filme> filmes = new ArrayList<>();
     Date data=new Date();
 
-    //criando o aluguel
-    void Alugar(int id_Loc, Cliente id_Cliente, Cliente nome_Cliente){
-        this.id_Loc = id_Loc;
-        this.id_Cliente = id_Cliente;
-        this.nome_Cliente= nome_Cliente;
-        this.dt_Loc = data;
+    //construtor
+    Locacao(int idLoc, Cliente cliente){
+        this.idLoc = idLoc;
+        this.cliente = cliente;
+        this.dtLoc = data;
     }
     //retorna id da locação
     int Id_Locacao() {
-        return id_Loc;
+        return idLoc;
     }
     //adidiona filme na lista
-    void addFilme(Filme filme){
-        this.filmes.add(filme);
+    void AddFilme(Filme idFilme){
+        this.filmes.add(filmes);
     }
-    float calcValorTot(){
+    double calcValorTot(){
         for(Filme filme: filmes){
-            this.valor_Tot = this.valor_Tot + filme.valor;
+            this.valorTot = this.valorTot + filme.valor;
         }
-        return valor_Tot;
+        return valorTot;
     }
     void dataDev(){
-        int dias = Cliente.dias_Dev;
+        int dias = Cliente.diasDev;
     }
 }
