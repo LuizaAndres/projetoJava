@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
 public class Locacao{
     int idLoc;
     Cliente cliente;
@@ -12,8 +10,7 @@ public class Locacao{
     //criando lista de filmes do carrinho
     List<Filme> filmes = new ArrayList<>();
     Date data=new Date();
-
-    //construtor
+    //construtor de aluguel
     Locacao(int idLoc, Cliente cliente){
         this.idLoc = idLoc;
         this.cliente = cliente;
@@ -24,12 +21,14 @@ public class Locacao{
         return idLoc;
     }
     //adidiona filme na lista
-    void AddFilme(Filme idFilme){
-        this.filmes.add(filmes);
+    void AddFilme(Filme filme){
+        this.filmes.add(filme);
     }
+    //calcula valor da locacao
     double calcValorTot(){
         for(Filme filme: filmes){
             this.valorTot = this.valorTot + filme.valor;
+            System.out.println(this.valorTot);
         }
         return valorTot;
     }
