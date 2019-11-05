@@ -3,12 +3,12 @@ public class Filme {
     String nome_Filme;
     String dt_lanc;
     String sinopse;
-    float valor;
+    double valor;
     int estoque;
     int disponiveis;
     int alugados;
     //construtor de filmes
-    Filme(int id_Filme, String nome_Filme, String dt_lanc, String sinopse, float valor, int estoque){
+    Filme(int id_Filme, String nome_Filme, String dt_lanc, String sinopse, double valor, int estoque){
         this.id_Filme = id_Filme;
         this.nome_Filme = nome_Filme;
         this.dt_lanc = dt_lanc;
@@ -16,6 +16,7 @@ public class Filme {
         this.estoque = estoque;
         this.disponiveis = estoque;
         this.alugados = 0;
+        this.valor = valor;
     }
     //função que controla quantidade de filmes disponiveis
     void disponiveis(){
