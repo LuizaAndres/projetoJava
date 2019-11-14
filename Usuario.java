@@ -11,14 +11,20 @@ class Usuario{
         this.nome=nome;
 
     }
-    boolean autenticar(String nomeTeste, String pswTeste){
-        return nomeTeste.equals(this.userName) && 
+    boolean autenticar(String USTeste, String pswTeste){
+        return USTeste.equals(this.userName) && 
             pswTeste.equals(this.psw);
     }
 
     String nome(){
         return this.nome;
 
+    }
+    /**
+     * @return the idU
+     */
+    public int getIdU() {
+        return idU;
     }
 
 }
