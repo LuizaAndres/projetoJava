@@ -9,7 +9,7 @@ class Cliente extends Usuario {
     Date dtCadastro = new Date();
     List<Venda> vendas = new ArrayList<>();
 
-    Cliente(int idU, String userName, String psw, String nome, String endereco, String tel){
+    Cliente(int idU, String userName, String psw, String nome, int id, String endereco, String tel){
         super(idU, userName, psw, nome);
         this.id=id;
         this.endereco=endereco;
@@ -17,13 +17,16 @@ class Cliente extends Usuario {
         this.dtCadastro=new Date();
     }
 
-   /* String nome(){
+    String nome(){
         return super.nome();
     }
     int qtdCompra(){
         return this.vendas.size();
     }
-    double valorcompra(){
+    int idCliente(){
+        return this.id;
+    }
+    /*double valorcompra(){
 
     }*/
 }

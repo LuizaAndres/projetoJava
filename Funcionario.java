@@ -9,7 +9,7 @@ class Funcionario extends Usuario{
     private Date dtNasc;
     List<Venda> vendas = new ArrayList<>();
 
-    Funcionario(int idU, String userName, String psw, String nome, double salario, String banco){
+    Funcionario(int idU, String userName, String psw, String nome, int id, double salario, String banco){
         super(idU, userName, psw, nome);
         this.salario=salario;
         this.banco=banco;
@@ -21,7 +21,17 @@ class Funcionario extends Usuario{
     //}
     int qtdVendas(){
         return this.vendas.size();
-
-
+    }
+    String banco(){
+        return this.banco;
+    }
+    double salario(){
+        return this.salario;
+    }
+    int idFunc(){
+        return this.id;
+    }
+    Date dtnasc(){
+        return this.dtNasc;
     }
 }
