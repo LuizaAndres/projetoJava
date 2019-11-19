@@ -1,6 +1,8 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.Map.Entry;
 
 class Loja{
@@ -22,8 +24,8 @@ class Loja{
         produtos.put(produtos.size()+1, produto);
 //criando mapa de vendas
         Map<Integer,Venda> vendas = new HashMap<>();
-        /*Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
-        venda.adicionarProduto(produtos.get(codigoProduto), quantidade);*/
+//        Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
+ //       venda.adicionarProduto(produtos.get(codigoProduto), quantidade);
 
 
 //_______________________________________________________________________________        
@@ -58,57 +60,58 @@ class Loja{
                         case 1:
                         System.out.println("Cliente \n");
                         //cadastraCliente(clientes);
-                        System.out.println("Digite nome de usuário: ");
+                        System.out.println("Digite nome de usuário: \n");
                         String userName = scanner.next();
-                        System.out.println("Digite novo password: ");
+                        System.out.println("Digite novo password: \n");
                         String psw = scanner.next();
-                        System.out.println("Digite nome: ");
+                        System.out.println("Digite nome: \n");
                         String nome = scanner.next();
-                        System.out.println("Digite endereco: ");
+                        System.out.println("Digite endereco: \n");
                         String endereco = scanner.next();
-                        System.out.println("Digite telefone: ");
+                        System.out.println("Digite telefone: \n");
                         String tel = scanner.next();
-    //colocando o cliente no map usuário e clientes
                         Cliente cliente = new Cliente(usuarios.size()+1, userName, psw, nome, clientes.size()+1, endereco, tel);
                         usuarios.put(usuarios.size()+1, cliente);
                         clientes.put(clientes.size()+1, cliente);
                         break;
     //cadastrar funcionario
                         case 2:
-                        System.out.println("Funcionario");
-                        System.out.println("Digite nome de usuário: ");
-                        userName = scanner.next();
-                        System.out.println("Digite novo password");
-                        psw = scanner.next();
-                        System.out.println("Digite nome: ");
-                        nome = scanner.next();
-                        System.out.println("Digite salario: ");
+
+                        System.out.println("Funcionario\n");
+                        System.out.println("Digite nome de usuário: \n");
+                         userName = scanner.next();
+                        System.out.println("Digite novo password: \n");
+                         psw = scanner.next();
+                        System.out.println("Digite nome: \n");
+                         nome = scanner.next();
+                        System.out.println("Digite salario: \n");
                         double salario = scanner.nextDouble();
-                        System.out.println("Digite numero do banco: ");
+                        System.out.println("Digite numero do banco: \n");
                         String banco = scanner.next();
-    //colocando o funcionarios no map usuários e funcionarios                        
+
+   //colocando o funcionarios no map usuários e funcionarios                        
                         Funcionario funcionario = new Funcionario(usuarios.size()+1, userName, psw, nome, funcionarios.size()+1, salario, banco);
                         
                         funcionarios.put(funcionarios.size()+1, funcionario);
-                        usuarios.put(usuarios.size()+1, funcionario);
+                        usuarios.put(usuarios.size()+1, funcionario); 
 
                         break;
     //cadastrar venda
                         case 3:
                         System.out.println("Venda");
-                        System.out.println("Informe o código do funcionario\n");
+                        System.out.println("Informe o código do funcionario: \n");
                         int codigoFuncionario = scanner.nextInt();
-                        System.out.println("Informe o código do cliente\n");
+                        System.out.println("Informe o código do cliente: \n");
                         int codigoCliente = scanner.nextInt();
                         Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
                         do {
-                            System.out.println("Digite o códio do Produto:");
+                            System.out.println("Digite o códio do Produto: \n");
                             int codigoProduto = scanner.nextInt();
-                            System.out.println("Digite a quantidade do Produto:");
+                            System.out.println("Digite a quantidade do Produto: \n");
                             int quantidade = scanner.nextInt();
 
                             venda.adicionarProduto(produtos.get(codigoProduto), quantidade);
-                            System.out.println("Deseja inserir um novo produto?");
+                            System.out.println("Deseja inserir um novo produto? sim ou não");
                         } while(scanner.next().equalsIgnoreCase("sim"));
                         break;
     //voltar
@@ -124,8 +127,7 @@ class Loja{
 //consultar                    
                 case 2:
                 do{ 
-                    System.out.println("Consultar:\n");
-                    System.out.println("Escolha uma opção: \n");
+                    System.out.println("Consultar - Escolha uma opção: \n");
                     System.out.println("1 - Lista de Clientes \n");
                     System.out.println("2 - Lista de Funcionario \n");
                     System.out.println("3 - Compras por cliente \n");
@@ -146,6 +148,9 @@ class Loja{
     //compras por cliente
                         case 3:
                         System.out.println("Compras por cliente \n");
+                        System.out.println("Digite o código do Cliente:");
+                        int codigoCliente = scanner.nextInt();
+                        imprimirProdutoCliente(clientes.get(codigoCliente));
 
                         break;
     //venda por funcionario
@@ -180,7 +185,7 @@ class Loja{
     //fim do primeiro menu
     }
 
-//metodo de imprimir lista dos clientes
+//metodo cadastrar clientes
     static void cadastraCliente(Map<Integer,Cliente> clientes){
         int idCliente = clientes.size();
         Scanner scanner = new Scanner(System.in);
@@ -194,7 +199,7 @@ class Loja{
         String endereco = scanner.next();
         System.out.println("Digite telefone: ");
         String tel = scanner.next();
-
+//metodo de imprimir lista dos clientes
         Cliente cliente = new Cliente(idCliente, userName, psw, nome, idCliente, endereco, tel);
         clientes.put(idCliente, cliente);
         scanner.close();
@@ -208,6 +213,19 @@ class Loja{
     static void imprimirListaFunc(Map<Integer, Funcionario> mapping){
         for(Entry<Integer,Funcionario> map:mapping.entrySet()){
             System.out.println("Id: " + map.getKey() + " - Nome: " + map.getValue().nome());
+        }
+    }
+    static void imprimirProdutoCliente(Cliente cliente){
+        Set<String> produtos = new HashSet<>();
+
+        for(Venda venda:cliente.vendas){
+            for(VendaProduto vendaProduto:venda.produtos){
+                produtos.add(vendaProduto.produto.nome);
+            }
+        }
+
+        for(String produto: produtos){
+            System.out.println(produto);
         }
     }
 
