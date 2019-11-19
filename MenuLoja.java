@@ -156,6 +156,10 @@ class Loja{
     //venda por funcionario
                         case 4:
                         System.out.println("Venda por Funcionario \n");
+                        System.out.println("Digite o código do Funcionairo:");
+                        int codigoFuncionario = scanner.nextInt();
+                        imprimirVendaFuncionario(clientes.get(codigoFuncionario));
+                        
                         break;
     //voltar
                         case 5:
@@ -226,6 +230,20 @@ class Loja{
 
         for(String produto: produtos){
             System.out.println(produto);
+        }
+    }
+
+    static void imprimirVendaFuncionario(Funconario funcionario){
+        Set<String> produtos = new HashSet<>();
+
+        for(Venda venda:funcionario.vendas){
+            for(VendaProduto vendaProduto:venda.clientes){
+                clientes.add(vendaProduto.clientes.nome);
+            }
+        }
+
+        for(String cliente: clientes){
+            System.out.println(cliente);
         }
     }
 
