@@ -12,7 +12,8 @@ public class Venda {
     Venda(int id, Funcionario funcionario, Cliente cliente){
         this.id = id;
         this.dtVenda= new Date();
-
+        this.funcionario = funcionario;
+        this.cliente = cliente;
         funcionario.vendas.add(this);
         cliente.vendas.add(this);
     }

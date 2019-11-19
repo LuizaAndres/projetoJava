@@ -26,7 +26,9 @@ class Cliente extends Usuario {
     int idCliente(){
         return this.id;
     }
+    
     /*double valorcompra(){
 
+    
     }*/
 }
