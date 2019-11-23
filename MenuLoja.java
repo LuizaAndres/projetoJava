@@ -10,7 +10,8 @@ class Loja{
 //criando mapa usuários
         Map<Integer,Usuario> usuarios = new HashMap<>();
  //criando mapa funcionarios
-        Map<Integer,Funcionario> funcionarios = new HashMap<>();  
+        Map<Integer,Funcionario> funcionarios = new HashMap<>();
+        Funcionario funcionario = new Funcionario(funcionarios.size()+1, "admin", "psw", "admin", usuarios.size()+1, 1.0, "banco");  
         
 //criando mapa clientes
         Map<Integer,Cliente> clientes = new HashMap<>();
@@ -22,23 +23,40 @@ class Loja{
         Map<Integer,Produto> produtos = new HashMap<>();
         Produto produto= new Produto(produtos.size()+1, "agua", 2.00);
         produtos.put(produtos.size()+1, produto);
+
 //criando mapa de vendas
         Map<Integer,Venda> vendas = new HashMap<>();
 //        Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
- //       venda.adicionarProduto(produtos.get(codigoProduto), quantidade);
+//        venda.adicionarProduto(produtos.get(codigoProduto), quantidade);
 
-
-//_______________________________________________________________________________        
+   
         int op;
         int opCad;
         int opCon;
+        String userName;
+        String psw;
+        String nome;
+        String endereco;
+        String tel;
+        double salario;
+        String banco;
+        int codigoFuncionario;
+        int codigoCliente;
 
 
-//primeiro menu  
 
-
+//Autenticar
         Scanner scanner = new Scanner(System.in);
-        do{ 
+//pedir login
+        System.out.println("Digite usuário: ");
+        userName = scanner.next();
+//pedir senha
+        System.out.println("Digite senha: ");
+        psw = scanner.next();
+//faz um if comparando usuario e senha{
+
+//primeiro menu          
+            do{ 
             System.out.println("Escolha uma opção: \n");
             System.out.println("1 - Cadastrar \n");
             System.out.println("2 - Consultar \n");
@@ -47,7 +65,6 @@ class Loja{
             switch(op){
 //cadastro geral
                 case 1:
-//primeiro menu                
                 do{
                     System.out.println("Cadastrar - Escolha uma opção: \n");
                     System.out.println("1 - Cliente \n");
@@ -58,39 +75,44 @@ class Loja{
                     switch(opCad){
     //cadastrar cliente
                         case 1:
-                        System.out.println("Cliente \n");
-                        //cadastraCliente(clientes);
-                        System.out.println("Digite nome de usuário: \n");
-                        String userName = scanner.next();
-                        System.out.println("Digite novo password: \n");
-                        String psw = scanner.next();
-                        System.out.println("Digite nome: \n");
-                        String nome = scanner.next();
-                        System.out.println("Digite endereco: \n");
-                        String endereco = scanner.next();
-                        System.out.println("Digite telefone: \n");
-                        String tel = scanner.next();
-                        Cliente cliente = new Cliente(usuarios.size()+1, userName, psw, nome, clientes.size()+1, endereco, tel);
-                        usuarios.put(usuarios.size()+1, cliente);
-                        clientes.put(clientes.size()+1, cliente);
+                        try {
+                            System.out.println("Cliente \n");
+                            //cadastraCliente(clientes);
+                            System.out.println("Digite nome de usuário: \n");
+                            userName = scanner.next();
+                            System.out.println("Digite novo password: \n");
+                            psw = scanner.next();
+                            System.out.println("Digite nome: \n");
+                            nome = scanner.next();
+                            System.out.println("Digite endereco: \n");
+                            endereco = scanner.next();
+                            System.out.println("Digite telefone: \n");
+                            tel = scanner.next();
+                            Cliente cliente = new Cliente(usuarios.size()+1, userName, psw, nome, clientes.size()+1, endereco, tel);
+                            usuarios.put(usuarios.size()+1, cliente);
+                            clientes.put(clientes.size()+1, cliente);
+                        } catch (Exception e) {
+                            System.out.println("Erro: "+e);
+                        }
+                        
                         break;
     //cadastrar funcionario
                         case 2:
 
                         System.out.println("Funcionario\n");
                         System.out.println("Digite nome de usuário: \n");
-                         userName = scanner.next();
+                        userName = scanner.next();
                         System.out.println("Digite novo password: \n");
-                         psw = scanner.next();
+                        psw = scanner.next();
                         System.out.println("Digite nome: \n");
-                         nome = scanner.next();
+                        nome = scanner.next();
                         System.out.println("Digite salario: \n");
-                        double salario = scanner.nextDouble();
+                        salario = scanner.nextDouble();
                         System.out.println("Digite numero do banco: \n");
-                        String banco = scanner.next();
+                        banco = scanner.next();
 
    //colocando o funcionarios no map usuários e funcionarios                        
-                        Funcionario funcionario = new Funcionario(usuarios.size()+1, userName, psw, nome, funcionarios.size()+1, salario, banco);
+                        funcionario = new Funcionario(usuarios.size()+1, userName, psw, nome, funcionarios.size()+1, salario, banco);
                         
                         funcionarios.put(funcionarios.size()+1, funcionario);
                         usuarios.put(usuarios.size()+1, funcionario); 
@@ -100,9 +122,9 @@ class Loja{
                         case 3:
                         System.out.println("Venda");
                         System.out.println("Informe o código do funcionario: \n");
-                        int codigoFuncionario = scanner.nextInt();
+                        codigoFuncionario = scanner.nextInt();
                         System.out.println("Informe o código do cliente: \n");
-                        int codigoCliente = scanner.nextInt();
+                        codigoCliente = scanner.nextInt();
                         Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
                         do {
                             System.out.println("Digite o códio do Produto: \n");
@@ -124,7 +146,7 @@ class Loja{
                     } 
                 }while (opCad!=4);
                 break;
-//consultar                    
+//consulta geral                   
                 case 2:
                 do{ 
                     System.out.println("Consultar - Escolha uma opção: \n");
@@ -149,9 +171,8 @@ class Loja{
                         case 3:
                         System.out.println("Compras por cliente \n");
                         System.out.println("Digite o código do Cliente:");
-                        int codigoCliente = scanner.nextInt();
+                        codigoCliente = scanner.nextInt();
                         imprimirProdutoCliente(clientes.get(codigoCliente));
-
                         break;
     //venda por funcionario
                         case 4:
@@ -165,6 +186,7 @@ class Loja{
                         System.out.println("Opção inválida\n");
                         break;
                     }  
+//fim do segundo menu 
                 } while (opCon!=5);
                 break;
                 case 3:
@@ -173,18 +195,10 @@ class Loja{
                 default:
                     System.out.println("Opção inválida\n");
             } 
-    //fim do segundo menu            
-            //validadr acesso username password
-            //String passw = nextLine
-            //autenticar(passw); 
-            
-            
-            
         } while (op!=3);
         scanner.close();
     //fim do primeiro menu
     }
-
 //metodo cadastrar clientes
     static void cadastraCliente(Map<Integer,Cliente> clientes){
         int idCliente = clientes.size();
@@ -204,6 +218,7 @@ class Loja{
         clientes.put(idCliente, cliente);
         scanner.close();
     }
+//metodo imprimir lista de clientes    
     static void imprimirLista(Map<Integer, Cliente> mapping){
         for(Entry<Integer,Cliente> map:mapping.entrySet()){
             System.out.println("Id: " + map.getKey() + " - Nome: " + map.getValue().nome());
@@ -215,18 +230,21 @@ class Loja{
             System.out.println("Id: " + map.getKey() + " - Nome: " + map.getValue().nome());
         }
     }
+//imprimir produtos por cliente
     static void imprimirProdutoCliente(Cliente cliente){
         Set<String> produtos = new HashSet<>();
-
         for(Venda venda:cliente.vendas){
             for(VendaProduto vendaProduto:venda.produtos){
                 produtos.add(vendaProduto.produto.nome);
             }
         }
-
         for(String produto: produtos){
             System.out.println(produto);
         }
     }
-
+//imprimir venda por funcionario
+    static void imprimirVendaFuncionario(Funcionario funcionario){
+        
+    }    
 }
+//}
