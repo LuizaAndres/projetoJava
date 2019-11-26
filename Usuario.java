@@ -26,5 +26,12 @@ class Usuario{
     public int getIdU() {
         return idU;
     }
+    /**
+     * @param idU the idU to set
+     */
+    public void setIdU(int idU) {
+        this.idU = idU;
+    }
+    
 
 }

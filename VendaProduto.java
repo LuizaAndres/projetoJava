@@ -8,4 +8,10 @@ public class VendaProduto {
         this.produto = produto;
         this.quantidade = quantidade;
     }
+    /**
+     * @return the quantidade
+     */
+    public int getQuantidade() {
+        return quantidade;
+    }
 }

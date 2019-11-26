@@ -177,6 +177,10 @@ class Loja{
     //venda por funcionario
                         case 4:
                         System.out.println("Venda por Funcionario \n");
+                        System.out.println("Digite o código do Funcionairo:");
+                        codigoFuncionario = scanner.nextInt();
+                        imprimirVendaFuncionario(funcionario);
+                        
                         break;
     //voltar
                         case 5:
@@ -234,7 +238,7 @@ class Loja{
     static void imprimirProdutoCliente(Cliente cliente){
         Set<String> produtos = new HashSet<>();
         for(Venda venda:cliente.vendas){
-            for(VendaProduto vendaProduto:venda.produtos){
+            for(VendaProduto vendaProduto:venda.vendaProdutos){
                 produtos.add(vendaProduto.produto.nome);
             }
         }
@@ -242,9 +246,22 @@ class Loja{
             System.out.println(produto);
         }
     }
+
 //imprimir venda por funcionario
+    
     static void imprimirVendaFuncionario(Funcionario funcionario){
-        
-    }    
+        Set<String> produtos = new HashSet<>();
+
+        for(Venda venda:funcionario.vendas){
+            for(VendaProduto vendaProduto:venda.vendaProdutos){
+                System.out.println(vendaProduto.produto.getNome());
+                System.out.println(vendaProduto.getQuantidade());
+            }
+        }
+
+        for(String funcionarios: funcionario){
+            System.out.println(funcionario);
+        }
+    }
+
 }
-//}

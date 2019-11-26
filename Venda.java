@@ -7,7 +7,7 @@ public class Venda {
     Date dtVenda;
     Funcionario funcionario;
     Cliente cliente;
-    List<VendaProduto> produtos = new ArrayList<>();
+    List<VendaProduto> vendaProdutos = new ArrayList<>();
     
     Venda(int id, Funcionario funcionario, Cliente cliente){
         this.id = id;
@@ -19,6 +19,6 @@ public class Venda {
     }
 
     public void adicionarProduto(Produto produto, int quantidade){
-        this.produtos.add(new VendaProduto(this, produto, quantidade));
+        this.vendaProdutos.add(new VendaProduto(this, produto, quantidade));
     }
 }
