@@ -14,7 +14,7 @@ public class Index {
         //System.out.println("Alterando Usuário");
         //Conexao.updateUser(connection, 4, "987654");
 
-        System.out.println("Removendo Usuário");
+        //System.out.println("Removendo Usuário");
         Conexao.removeUser(connection, 4);
 
         DAO dao = new DAO();

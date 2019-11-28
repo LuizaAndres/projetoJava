@@ -24,7 +24,6 @@ public class DAO {
                     return resultado.getInt(1);
                 }
             }
-
             return -1;
         } catch(SQLException e){
             throw new RuntimeException(e);

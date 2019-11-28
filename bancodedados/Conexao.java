@@ -13,7 +13,7 @@ public class Conexao {
     public static Connection getConnection() throws Exception {
         try {
             Properties props = getProps();
-            final String url = "jdbc:mysql://localhost:3306/vendas";
+            final String url = "jdbc:mysql://localhost:3306/jacks";
             //final String url = props.getProperty("banco.url");
             final String user = "root";
             //final String user = props.getProperty("banco.usuario");
