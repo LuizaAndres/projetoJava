@@ -1,16 +1,14 @@
-package bancodedados;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAO {
-    private Connection connection;
+    private static Connection connection;
 
-    public int insert(String sql, Object[] atribs) throws Exception {
+    public static int insert(String sql, Object[] atribs) throws Exception {
         try{
-            PreparedStatement statement = this.startConnection().prepareStatement(
+            PreparedStatement statement = startConnection().prepareStatement(
                 sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             // Atribui os valores
@@ -30,7 +28,7 @@ public class DAO {
         }
     }
 
-    private void insertAtribs(PreparedStatement statement, Object[] atribs) throws SQLException {
+    private static void insertAtribs(PreparedStatement statement, Object[] atribs) throws SQLException {
         int idx = 1;
         for(Object atrib: atribs){
             if(atrib instanceof String) {
@@ -41,17 +39,17 @@ public class DAO {
             idx++;
         }
     }
-    private Connection startConnection() throws Exception {
-        if(this.connection != null && !connection.isClosed()){
-            return this.connection;
+    private static Connection startConnection() throws Exception {
+        if(connection != null && !connection.isClosed()){
+            return connection;
         }
 
-        this.connection = Conexao.getConnection();
+        connection = Conexao.getConnection();
 
-        return this.connection;
+        return connection;
     }
 
-    public void endConnection() throws SQLException, Exception {
+    public static void endConnection() throws SQLException, Exception {
         startConnection().close();
     }
 }

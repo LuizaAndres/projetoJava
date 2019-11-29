@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 class Loja{
     public static void main(String[] args){
+
 //criando mapa usuários
         Map<Integer,Usuario> usuarios = new HashMap<>();
  //criando mapa funcionarios
@@ -28,8 +29,6 @@ class Loja{
         Map<Integer,Venda> vendas = new HashMap<>();
 //        Venda venda = new Venda(vendas.size(), funcionarios.get(codigoFuncionario), clientes.get(codigoCliente));
 //        venda.adicionarProduto(produtos.get(codigoProduto), quantidade);
-
-   
         int op;
         int opCad;
         int opCon;
@@ -217,6 +216,7 @@ class Loja{
         String endereco = scanner.next();
         System.out.println("Digite telefone: ");
         String tel = scanner.next();
+        
 //metodo de imprimir lista dos clientes
         Cliente cliente = new Cliente(idCliente, userName, psw, nome, idCliente, endereco, tel);
         clientes.put(idCliente, cliente);

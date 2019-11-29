@@ -23,9 +23,10 @@ public class Resumo1 extends JFrame {
         labelComent = new JLabel("Comentário");
 
         textNome = new JTextField(25);
+        
         textSenha = new JPasswordField(25);
-
         textSenha.setEchoChar('*');
+
         textComent = new JTextArea(10,25);
         textComent.setLineWrap(true);
 
