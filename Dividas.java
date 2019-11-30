@@ -4,14 +4,16 @@ public class Dividas extends Contas {
     double percentualDescontos;
 
 //construtor
-    public Dividas() {
+    public Dividas(int id){
+        super(id);
+        Set<dividas>;
     }
 //construtor    
 
     public Dividas(int id, int mes, int ano, double valor, Pessoas pessoa, double percentualDescontos) {
         super(id, mes, ano, valor, pessoa);
         this.percentualDescontos = percentualDescontos;
-        
+        pessoa.dividas.add(this);
     }
     
 //getters e setters      
