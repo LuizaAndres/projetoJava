@@ -1,3 +1,4 @@
+//arquivo pronto
 import javax.swing.*;
 import java.awt.*;
 import java.awt.FlowLayout;
@@ -5,16 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-
-public class TelaIndex extends JFrame implements ActionListener{
-    
-    
-        
+public class TelaIndex extends JFrame{
+//criando objetos    
     JButton cadPess = new JButton("Cadastrar Pessoa");
     JButton cadDiv = new JButton("Cadastrar Divida");
     JButton cadProv = new JButton("Cadastrar Provimento");
@@ -23,60 +17,57 @@ public class TelaIndex extends JFrame implements ActionListener{
     JButton consProv = new JButton("Consultar Provimentos");
     
     public TelaIndex() {
-        
+//criando tela e tipo        
         Container pane = this.getContentPane();
         pane.setLayout(new FlowLayout(FlowLayout.CENTER));
-        
+//adicioando objetos
         pane.add(cadPess);
         pane.add(cadDiv);
         pane.add(cadProv);
         pane.add(consPess);
         pane.add(consDiv);
         pane.add(consProv);
-
+//fazendo os obj terem função
         ActionListener handlerAction = new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 methodAction(event);
             }
         };
-
+//caracteristicas da janela
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(250,250);
         this.setVisible(true);
-
-         cadPess.addActionListener(handlerAction);
+//adicionando os objetos
+        cadPess.addActionListener(handlerAction);
         cadDiv.addActionListener(handlerAction);
         cadProv.addActionListener(handlerAction);
         consPess.addActionListener(handlerAction);
         consDiv.addActionListener(handlerAction);
         consProv.addActionListener(handlerAction);
-
     }
+//fazendo objetos terem função por botão    
     private void methodAction(final ActionEvent event) {
         if (event.getSource() == cadPess) {
-            Pessoas cadastro = new CadastrarPessoa();
+            new TelaCadastrarPessoa();
         }
         if (event.getSource() == cadDiv) {
-            System.out.println("Cadastrar Dívidas");
+            new TelaCadastrarDivida();
         }
         if (event.getSource() == cadProv) {
-            System.out.println("Cadastrar Proventos");
+            new TelaCadastrarProvento();
         }
         if (event.getSource() == consPess) {
-            System.out.println("Consultar Pessoas");
+            new TelaConsultarPessoas();
         }
         if (event.getSource() == consDiv) {
-            System.out.println("Consultar Dívidas");
+            new TelaConsultarDivida();
         }
         if (event.getSource() == consProv) {
-            System.out.println("Consultar Proventos");
+            new TelaConsultarProvento();
         }
-        
     }
        
-        
-    }
     public static void main(String[] args){
-        TelaIndex janela = new TelaIndex();
+        new TelaIndex();
     }
 }
